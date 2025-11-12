@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <meta name="description" content="Портфолио curvsnow - минималистичные и атмосферные веб-дизайны">
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
 </head>
 <body>
 
@@ -33,7 +35,7 @@
                 </div>
 
                 <div class="socials">
-                    <a href="https://github.com/Unicol1/my-site" target="_blank" rel="noopener noreferrer" aria-label="GitHub профиль">
+                    <a href="https://github.com/curvsnow/my-site" target="_blank" rel="noopener noreferrer" aria-label="GitHub профиль">
                         <i class="fab fa-github"></i> GitHub
                     </a>
                     <a href="https://t.me/curvsnow" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
@@ -63,6 +65,20 @@
         <section id="contact" class="content-section fade-in">
             <h2>Контакты</h2>
             <p>Связаться со мной можно через Telegram или GitHub.</p>
+            
+            <form id="contactForm" class="contact-form">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" placeholder="Ваше имя" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder="Ваш email" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" name="message" rows="5" placeholder="Ваше сообщение" required></textarea>
+                </div>
+                <button type="submit" class="btn">Отправить</button>
+                <p id="formMessage" class="form-message"></p>
+            </form>
         </section>
     </main>
 
@@ -101,6 +117,49 @@
             if (intro) {
                 intro.classList.add('loaded');
             }
+        });
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyD2QwVfp-jrWyCzrRQdA6OsJh1Ll-GoWHA",
+            authDomain: "curvsnow.firebaseapp.com",
+            databaseURL: "https://curvsnow-default-rtdb.firebaseio.com",
+            projectId: "curvsnow",
+            storageBucket: "curvsnow.firebasestorage.app",
+            messagingSenderId: "702796596797",
+            appId: "1:702796596797:web:2cf20e67e82ac1288ccc54"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+        const database = firebase.database();
+
+        const contactForm = document.getElementById('contactForm');
+        const formMessage = document.getElementById('formMessage');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            const formData = {
+                name: name,
+                email: email,
+                message: message,
+                timestamp: new Date().toISOString()
+            };
+
+            const messagesRef = database.ref('messages');
+            messagesRef.push(formData)
+                .then(() => {
+                    formMessage.textContent = 'Сообщение отправлено! Спасибо.';
+                    formMessage.style.color = '#6f8a91';
+                    contactForm.reset();
+                })
+                .catch((error) => {
+                    formMessage.textContent = 'Ошибка при отправке. Попробуйте еще раз.';
+                    formMessage.style.color = '#ff6b6b';
+                });
         });
     </script>
 </body>
