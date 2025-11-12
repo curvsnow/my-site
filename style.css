@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0c0c0c;
+    color: #c7c7c7;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+/* ---------- HEADER ---------- */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 8%;
+    background-color: rgba(15, 15, 15, 0.8);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+    border-bottom: 1px solid rgba(111,138,145,0.2);
+}
+
+.logo {
+    color: #6f8a91;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+nav a {
+    color: #9b9b9b;
+    margin-left: 25px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #6f8a91;
+}
+
+/* ---------- MAIN SECTION ---------- */
+
+main {
+    padding-top: 100px;
+}
+
+.intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 10%;
+    flex-wrap: wrap;
+}
+
+.text {
+    max-width: 600px;
+}
+
+.text h3 {
+    font-weight: 300;
+    color: #9b9b9b;
+}
+
+.highlight {
+    color: #6f8a91;
+    font-size: 3em;
+    margin: 10px 0;
+    text-shadow: 0 0 10px rgba(111,138,145,0.4);
+}
+
+.text p {
+    line-height: 1.7;
+    color: #b0b0b0;
+}
+
+/* ---------- BUTTONS ---------- */
+
+.buttons {
+    margin-top: 25px;
+}
+
+.btn, .btn-outline {
+    padding: 10px 25px;
+    border: 2px solid #6f8a91;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+    border-radius: 4px;
+}
+
+.btn {
+    background-color: #6f8a91;
+    color: #0c0c0c;
+    margin-right: 10px;
+}
+
+.btn:hover {
+    background-color: #8ea4a9;
+}
+
+.btn-outline {
+    color: #6f8a91;
+}
+
+.btn-outline:hover {
+    background-color: #6f8a91;
+    color: #0c0c0c;
+}
+
+/* ---------- SOCIALS ---------- */
+
+.socials {
+    margin-top: 30px;
+}
+
+.socials a {
+    margin-right: 15px;
+    color: #7a7a7a;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.socials a:hover {
+    color: #6f8a91;
+}
+
+/* ---------- AVATAR ---------- */
+
+.avatar img {
+    width: 320px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid rgba(111,138,145,0.4);
+    box-shadow: 0 0 25px rgba(111,138,145,0.25);
+    transition: 0.4s;
+}
+
+.avatar img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 40px rgba(111,138,145,0.45);
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 900px) {
+    .intro {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    .avatar img {
+        margin-bottom: 30px;
+    }
+    .socials a {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.95em;
+    }
+    .socials i {
+        font-size: 1.2em;
+    }
+}
+
+/* ---------- CONTENT SECTIONS ---------- */
+
+.content-section {
+    padding: 100px 10%;
+    text-align: center;
+}
+
+.content-section h2 {
+    color: #6f8a91;
+    margin-bottom: 15px;
+    font-size: 2em;
+    text-shadow: 0 0 10px rgba(111,138,145,0.3);
+}
+
+.content-section p {
+    color: #a8a8a8;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ---------- ACTIVE NAV LINK ---------- */
+
+nav a.active {
+    color: #6f8a91;
+    text-shadow: 0 0 5px rgba(111,138,145,0.5);
+}
+
+/* Подсветка активного пункта при скролле */
+section {
+    scroll-margin-top: 80px;
+}
+.fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* Fallback: если JavaScript не загрузился, элементы все равно будут видны */
+.no-js .fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Когда элемент виден */
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Плавное появление аватара и текста при загрузке */
+.intro .text,
+.intro .avatar {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.intro.loaded .text,
+.intro.loaded .avatar {
+    opacity: 1;
+    transform: translateY(0);
+}
