@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Портфолио</title>
     <link rel="stylesheet" href="style.css">
-
-    <!-- Подключаем иконки Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="description" content="Портфолио curvsnow - минималистичные и атмосферные веб-дизайны">
 </head>
 <body>
 
@@ -34,20 +33,20 @@
                 </div>
 
                 <div class="socials">
-                    <a href="https://github.com/Unicol1/New.git" target="_blank">
+                    <a href="https://github.com/Unicol1/my-site" target="_blank" rel="noopener noreferrer" aria-label="GitHub профиль">
                         <i class="fab fa-github"></i> GitHub
                     </a>
-                    <a href="https://t.me/curvsnow" target="_blank">
+                    <a href="https://t.me/curvsnow" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
                         <i class="fab fa-telegram-plane"></i> Telegram
                     </a>
-                    <a href="https://www.image-line.com/flstudio/" target="_blank">
+                    <a href="https://www.image-line.com/flstudio/" target="_blank" rel="noopener noreferrer" aria-label="FL Studio">
                         <i class="fas fa-music"></i> FL Studio
                     </a>
                 </div>
             </div>
 
             <div class="avatar">
-                <img src="avatar.JPG" alt="Avatar" onerror="this.src='avatar.jpg'; this.onerror=null;">
+                <img src="avatar.JPG" alt="curvsnow" onerror="this.src='avatar.jpg'; this.onerror=null;" loading="lazy">
             </div>
         </section>
 
@@ -68,10 +67,8 @@
     </main>
 
     <script>
-        // Убираем класс no-js, если JavaScript работает
         document.documentElement.classList.remove('no-js');
-        
-        // Плавная прокрутка по разделам
+
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -84,7 +81,6 @@
             });
         });
 
-        // Анимация появления при прокрутке
         const fadeElems = document.querySelectorAll('.fade-in');
         if (fadeElems.length > 0 && 'IntersectionObserver' in window) {
             const observer = new IntersectionObserver(entries => {
@@ -97,11 +93,9 @@
 
             fadeElems.forEach(el => observer.observe(el));
         } else {
-            // Fallback: если IntersectionObserver не поддерживается
             fadeElems.forEach(el => el.classList.add('visible'));
         }
 
-        // Плавное появление главного блока при загрузке
         window.addEventListener('load', () => {
             const intro = document.querySelector('.intro');
             if (intro) {

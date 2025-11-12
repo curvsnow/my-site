@@ -13,8 +13,6 @@ body {
     overflow-x: hidden;
 }
 
-/* ---------- HEADER ---------- */
-
 header {
     display: flex;
     justify-content: space-between;
@@ -45,8 +43,6 @@ nav a {
 nav a:hover {
     color: #6f8a91;
 }
-
-/* ---------- MAIN SECTION ---------- */
 
 main {
     padding-top: 100px;
@@ -81,8 +77,6 @@ main {
     color: #b0b0b0;
 }
 
-/* ---------- BUTTONS ---------- */
-
 .buttons {
     margin-top: 25px;
 }
@@ -115,7 +109,7 @@ main {
     color: #0c0c0c;
 }
 
-/* ---------- SOCIALS ---------- */
+
 
 .socials {
     margin-top: 30px;
@@ -132,8 +126,6 @@ main {
     color: #6f8a91;
 }
 
-/* ---------- AVATAR ---------- */
-
 .avatar img {
     width: 320px;
     height: 320px;
@@ -148,8 +140,6 @@ main {
     transform: scale(1.03);
     box-shadow: 0 0 40px rgba(111,138,145,0.45);
 }
-
-/* ---------- RESPONSIVE ---------- */
 
 @media (max-width: 900px) {
     .intro {
@@ -170,8 +160,6 @@ main {
     }
 }
 
-/* ---------- CONTENT SECTIONS ---------- */
-
 .content-section {
     padding: 100px 10%;
     text-align: center;
@@ -190,14 +178,11 @@ main {
     margin: 0 auto;
 }
 
-/* ---------- ACTIVE NAV LINK ---------- */
-
 nav a.active {
     color: #6f8a91;
     text-shadow: 0 0 5px rgba(111,138,145,0.5);
 }
 
-/* Подсветка активного пункта при скролле */
 section {
     scroll-margin-top: 80px;
 }
@@ -207,19 +192,16 @@ section {
     transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
-/* Fallback: если JavaScript не загрузился, элементы все равно будут видны */
 .no-js .fade-in {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* Когда элемент виден */
 .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* Плавное появление аватара и текста при загрузке */
 .intro .text,
 .intro .avatar {
     opacity: 0;
