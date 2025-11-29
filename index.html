@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="ru" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>curvsnow - Портфолио веб-дизайнера и разработчика</title>
+    <meta name="description" content="Портфолио curvsnow - минималистичные и атмосферные веб-дизайны. Создаю проекты, в которых минимализм сочетается с атмосферой.">
+    <meta name="keywords" content="веб-дизайн, портфолио, разработчик, дизайнер, curvsnow, минимализм">
+    <meta name="author" content="curvsnow">
+    <meta property="og:title" content="curvsnow - Портфолио веб-дизайнера">
+    <meta property="og:description" content="Минималистичные и атмосферные веб-дизайны">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "curvsnow",
+      "jobTitle": "Веб-дизайнер и разработчик",
+      "description": "Создаю минималистичные и атмосферные веб-дизайны",
+      "url": "https://github.com/curvsnow/my-site",
+      "sameAs": [
+        "https://github.com/curvsnow/my-site",
+        "https://t.me/curvsnow"
+      ]
+    }
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
+</head>
+<body>
+    <div class="animated-background">
+        <div class="glow-orb"></div>
+        <div class="glow-orb"></div>
+        <div class="glow-orb"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+
+    <header>
+        <h2 class="logo">МоёПортфолио</h2>
+        <nav>
+            <a href="#home">Главная</a>
+            <a href="#about">Обо мне</a>
+            <a href="#projects">Проекты</a>
+            <a href="#contact">Контакты</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="intro">
+            <div class="text">
+                <h3>Привет, я</h3>
+                <h1 class="highlight">curvsnow</h1>
+                <p>Создаю минималистичные и атмосферные веб-дизайны. Люблю сочетать тёмные тона и мягкое свечение, чтобы передать настроение через визуал.</p>
+
+                <div class="buttons">
+                    <a href="#projects" class="btn">Портфолио</a>
+                    <a href="#contact" class="btn-outline">Связаться</a>
+                </div>
+
+                <div class="socials">
+                    <a href="https://github.com/curvsnow/my-site" target="_blank" rel="noopener noreferrer" aria-label="GitHub профиль" class="social-icon">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://t.me/curvsnow" target="_blank" rel="noopener noreferrer" aria-label="Telegram" class="social-icon">
+                        <i class="fab fa-telegram-plane"></i>
+                    </a>
+                    <a href="https://www.image-line.com/flstudio/" target="_blank" rel="noopener noreferrer" aria-label="FL Studio" class="social-icon">
+                        <i class="fas fa-music"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="avatar">
+                <img src="avatar.JPG" alt="curvsnow" onerror="this.src='avatar.jpg'; this.onerror=null;" loading="lazy">
+            </div>
+        </section>
+
+        <section id="about" class="content-section fade-in">
+            <h2>Обо мне</h2>
+            <p>Я дизайнер и разработчик, вдохновляюсь мрачной эстетикой и создаю проекты, в которых минимализм сочетается с атмосферой.</p>
+            <div class="stats-container">
+                <div class="stat-box">
+                    <div class="stat-number" data-target="15">0</div>
+                    <div class="stat-label">Проектов</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number" data-target="3">0</div>
+                    <div class="stat-label">Лет опыта</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number" data-target="50">0</div>
+                    <div class="stat-label">Довольных клиентов</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="content-section fade-in">
+            <h2>Проекты</h2>
+            <p>Мои текущие работы и концепты.</p>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Все</button>
+                <button class="filter-btn" data-filter="web">Веб-дизайн</button>
+                <button class="filter-btn" data-filter="ui">UI/UX</button>
+                <button class="filter-btn" data-filter="branding">Брендинг</button>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card" data-category="web">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <button class="view-project" data-project="1">Подробнее</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Веб-сайт Портфолио</h3>
+                        <p>Минималистичный дизайн с анимированным фоном и современным интерфейсом</p>
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-category="ui">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <button class="view-project" data-project="2">Подробнее</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>UI Kit Темная тема</h3>
+                        <p>Комплект компонентов для темных интерфейсов с акцентом на атмосферу</p>
+                        <div class="project-tags">
+                            <span>Figma</span>
+                            <span>UI Design</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-category="branding">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-brush"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <button class="view-project" data-project="3">Подробнее</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Брендинг Studio</h3>
+                        <p>Разработка визуальной идентичности для творческой студии</p>
+                        <div class="project-tags">
+                            <span>Branding</span>
+                            <span>Logo</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-category="web">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <button class="view-project" data-project="4">Подробнее</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Landing Page</h3>
+                        <p>Адаптивная посадочная страница с современными анимациями</p>
+                        <div class="project-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>Responsive</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-category="ui">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <button class="view-project" data-project="5">Подробнее</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Мобильное приложение</h3>
+                        <p>UI/UX дизайн для мобильного приложения с фокусом на удобство</p>
+                        <div class="project-tags">
+                            <span>Mobile</span>
+                            <span>UX Design</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-category="web">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <button class="view-project" data-project="6">Подробнее</button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>E-commerce платформа</h3>
+                        <p>Дизайн интернет-магазина с упором на конверсию и удобство</p>
+                        <div class="project-tags">
+                            <span>E-commerce</span>
+                            <span>Web Design</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="content-section fade-in">
+            <h2>Контакты</h2>
+            <p>Связаться со мной можно через Telegram или GitHub.</p>
+            
+            <form id="contactForm" class="contact-form">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" placeholder="Ваше имя" required>
+                    <span class="error-message" id="nameError"></span>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder="Ваш email" required>
+                    <span class="error-message" id="emailError"></span>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" name="message" rows="5" placeholder="Ваше сообщение" required></textarea>
+                    <span class="error-message" id="messageError"></span>
+                </div>
+                <button type="submit" class="btn" id="submitBtn">
+                    <span class="btn-text">Отправить</span>
+                    <span class="btn-loader" style="display: none;">
+                        <i class="fas fa-spinner fa-spin"></i>
+                    </span>
+                </button>
+                <p id="formMessage" class="form-message"></p>
+            </form>
+        </section>
+    </main>
+
+    <button id="scrollTop" class="scroll-top" aria-label="Наверх">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <script>
+        document.documentElement.classList.remove('no-js');
+
+        const projectsData = {
+            1: {
+                title: 'Веб-сайт Портфолио',
+                description: 'Минималистичный дизайн с анимированным фоном и современным интерфейсом. Проект включает адаптивную верстку, плавные анимации и интуитивную навигацию.',
+                tech: ['HTML', 'CSS', 'JavaScript', 'Firebase'],
+                year: '2024',
+                category: 'Веб-дизайн'
+            },
+            2: {
+                title: 'UI Kit Темная тема',
+                description: 'Комплект компонентов для темных интерфейсов с акцентом на атмосферу. Включает кнопки, формы, карточки и другие элементы в едином стиле.',
+                tech: ['Figma', 'UI Design', 'Design System'],
+                year: '2024',
+                category: 'UI/UX'
+            },
+            3: {
+                title: 'Брендинг Studio',
+                description: 'Разработка визуальной идентичности для творческой студии. Создан логотип, цветовая палитра и фирменный стиль.',
+                tech: ['Branding', 'Logo Design', 'Identity'],
+                year: '2023',
+                category: 'Брендинг'
+            },
+            4: {
+                title: 'Landing Page',
+                description: 'Адаптивная посадочная страница с современными анимациями. Оптимизирована для конверсии и быстрой загрузки.',
+                tech: ['HTML', 'CSS', 'Responsive Design'],
+                year: '2024',
+                category: 'Веб-дизайн'
+            },
+            5: {
+                title: 'Мобильное приложение',
+                description: 'UI/UX дизайн для мобильного приложения с фокусом на удобство использования. Проработан пользовательский опыт и визуальная иерархия.',
+                tech: ['Mobile', 'UX Design', 'Prototyping'],
+                year: '2024',
+                category: 'UI/UX'
+            },
+            6: {
+                title: 'E-commerce платформа',
+                description: 'Дизайн интернет-магазина с упором на конверсию и удобство. Реализована удобная система фильтров и корзина покупок.',
+                tech: ['E-commerce', 'Web Design', 'UX'],
+                year: '2023',
+                category: 'Веб-дизайн'
+            }
+        };
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    updateActiveNav(this.getAttribute('href'));
+                }
+            });
+        });
+
+        function updateActiveNav(hash) {
+            document.querySelectorAll('nav a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === hash) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        function handleScroll() {
+            const scrollPos = window.scrollY + 100;
+            const sections = document.querySelectorAll('section[id]');
+            const scrollTopBtn = document.getElementById('scrollTop');
+
+            sections.forEach(section => {
+                const top = section.offsetTop;
+                const height = section.offsetHeight;
+                const id = section.getAttribute('id');
+
+                if (scrollPos >= top && scrollPos < top + height) {
+                    document.querySelectorAll('nav a').forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${id}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+
+            if (window.scrollY > 300) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        }
+
+        window.addEventListener('scroll', handleScroll);
+        handleScroll();
+
+        const scrollTopBtn = document.getElementById('scrollTop');
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        const fadeElems = document.querySelectorAll('.fade-in');
+        if (fadeElems.length > 0 && 'IntersectionObserver' in window) {
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            fadeElems.forEach(el => observer.observe(el));
+        } else {
+            fadeElems.forEach(el => el.classList.add('visible'));
+        }
+
+        function animateCounter(element) {
+            const target = parseInt(element.getAttribute('data-target'));
+            const duration = 2000;
+            const increment = target / (duration / 16);
+            let current = 0;
+
+            const updateCounter = () => {
+                current += increment;
+                if (current < target) {
+                    element.textContent = Math.floor(current);
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    element.textContent = target;
+                }
+            };
+
+            updateCounter();
+        }
+
+        const statNumbers = document.querySelectorAll('.stat-number');
+        if (statNumbers.length > 0 && 'IntersectionObserver' in window) {
+            const statsObserver = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+                        entry.target.classList.add('animated');
+                        animateCounter(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            statNumbers.forEach(stat => statsObserver.observe(stat));
+        }
+
+        window.addEventListener('load', () => {
+            const intro = document.querySelector('.intro');
+            if (intro) {
+                intro.classList.add('loaded');
+            }
+        });
+
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                const filter = button.getAttribute('data-filter');
+
+                projectCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 10);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+
+        const modal = document.getElementById('projectModal');
+        const modalBody = document.getElementById('modalBody');
+        const modalClose = document.querySelector('.modal-close');
+        const viewProjectButtons = document.querySelectorAll('.view-project');
+
+        function openModal(projectId) {
+            const project = projectsData[projectId];
+            if (project) {
+                modalBody.innerHTML = `
+                    <h2>${project.title}</h2>
+                    <p class="modal-category">${project.category} • ${project.year}</p>
+                    <p class="modal-description">${project.description}</p>
+                    <div class="modal-tech">
+                        <h4>Технологии:</h4>
+                        <div class="modal-tags">
+                            ${project.tech.map(tech => `<span>${tech}</span>`).join('')}
+                        </div>
+                    </div>
+                `;
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        viewProjectButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const projectId = button.getAttribute('data-project');
+                openModal(projectId);
+            });
+        });
+
+        modalClose.addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyD2QwVfp-jrWyCzrRQdA6OsJh1Ll-GoWHA",
+            authDomain: "curvsnow.firebaseapp.com",
+            databaseURL: "https://curvsnow-default-rtdb.firebaseio.com",
+            projectId: "curvsnow",
+            storageBucket: "curvsnow.firebasestorage.app",
+            messagingSenderId: "702796596797",
+            appId: "1:702796596797:web:2cf20e67e82ac1288ccc54"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+        const database = firebase.database();
+
+        const contactForm = document.getElementById('contactForm');
+        const formMessage = document.getElementById('formMessage');
+        const submitBtn = document.getElementById('submitBtn');
+        const btnText = submitBtn.querySelector('.btn-text');
+        const btnLoader = submitBtn.querySelector('.btn-loader');
+
+        function validateName(name) {
+            const nameError = document.getElementById('nameError');
+            if (name.trim().length < 2) {
+                nameError.textContent = 'Имя должно содержать минимум 2 символа';
+                return false;
+            }
+            nameError.textContent = '';
+            return true;
+        }
+
+        function validateEmail(email) {
+            const emailError = document.getElementById('emailError');
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                emailError.textContent = 'Введите корректный email';
+                return false;
+            }
+            emailError.textContent = '';
+            return true;
+        }
+
+        function validateMessage(message) {
+            const messageError = document.getElementById('messageError');
+            if (message.trim().length < 10) {
+                messageError.textContent = 'Сообщение должно содержать минимум 10 символов';
+                return false;
+            }
+            messageError.textContent = '';
+            return true;
+        }
+
+        document.getElementById('name').addEventListener('blur', (e) => {
+            validateName(e.target.value);
+        });
+
+        document.getElementById('email').addEventListener('blur', (e) => {
+            validateEmail(e.target.value);
+        });
+
+        document.getElementById('message').addEventListener('blur', (e) => {
+            validateMessage(e.target.value);
+        });
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            if (!validateName(name) || !validateEmail(email) || !validateMessage(message)) {
+                formMessage.textContent = 'Пожалуйста, исправьте ошибки в форме';
+                formMessage.style.color = '#ff6b6b';
+                return;
+            }
+
+            btnText.style.display = 'none';
+            btnLoader.style.display = 'inline-block';
+            submitBtn.disabled = true;
+
+            const formData = {
+                name: name,
+                email: email,
+                message: message,
+                timestamp: new Date().toISOString()
+            };
+
+            const messagesRef = database.ref('messages');
+            messagesRef.push(formData)
+                .then(() => {
+                    formMessage.textContent = 'Сообщение отправлено! Спасибо.';
+                    formMessage.style.color = '#6f8a91';
+                    contactForm.reset();
+                    document.querySelectorAll('.error-message').forEach(err => err.textContent = '');
+                })
+                .catch((error) => {
+                    formMessage.textContent = 'Ошибка при отправке. Попробуйте еще раз.';
+                    formMessage.style.color = '#ff6b6b';
+                })
+                .finally(() => {
+                    btnText.style.display = 'inline';
+                    btnLoader.style.display = 'none';
+                    submitBtn.disabled = false;
+                });
+        });
+    </script>
+</body>
+</html>
